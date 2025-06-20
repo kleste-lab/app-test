@@ -1,0 +1,23 @@
+apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: null
+  labels:
+    app: app-test
+  name: app-test
+  namespace: app-test
+spec:
+  ports:
+  - name: http
+    port: 80
+    protocol: TCP
+    targetPort: 80
+  - name: https
+    port: 443
+    protocol: TCP
+    targetPort: 80
+  selector:
+    app: app-test
+  type: ClusterIP
+status:
+  loadBalancer: {}
